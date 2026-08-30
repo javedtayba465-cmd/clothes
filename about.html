@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Autumn Edit | VÉLORA Collections</title>
+    <meta name="description" content="Explore The Autumn Edit by VÉLORA featuring modern tailoring, effortless layers and evening essentials.">
+    <meta name="keywords" content="VÉLORA collections, autumn fashion, premium fashion, editorial fashion">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+        .velora-collection-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .velora-collection-nav {
+            max-width: 1300px;
+            min-height: 82px;
+            padding: 0 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .velora-collection-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 5px;
+        }
+
+        .velora-collection-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .velora-collection-menu a {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .velora-collection-menu a:hover,
+        .velora-collection-current {
+            color: #c9a27e;
+        }
+
+        /* HERO */
+        .velora-collection-hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 80px 8%;
+            background:
+                linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=85")
+                center/cover no-repeat;
+            color: #fff;
+        }
+
+        .velora-collection-hero-content {
+            max-width: 700px;
+        }
+
+        .velora-collection-label {
+            font-size: 11px;
+            letter-spacing: 5px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .velora-collection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 9vw, 110px);
+            line-height: .95;
+            font-weight: 500;
+        }
+
+        .velora-collection-description {
+            max-width: 580px;
+            margin-top: 25px;
+            font-size: 15px;
+        }
+
+        /* INTRO */
+        .velora-collection-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            padding: 110px 25px;
+        }
+
+        .velora-collection-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .velora-collection-intro p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* EDITORIAL */
+        .velora-editorial-block {
+            max-width: 1250px;
+            margin: 0 auto 130px;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .velora-editorial-block.velora-editorial-reverse {
+            grid-template-columns: .8fr 1.2fr;
+        }
+
+        .velora-editorial-image {
+            overflow: hidden;
+        }
+
+        .velora-editorial-image img {
+            height: 700px;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .velora-editorial-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .velora-editorial-content {
+            padding: 25px;
+        }
+
+        .velora-editorial-number {
+            color: #c9a27e;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .velora-editorial-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1.05;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .velora-editorial-content p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+            max-width: 430px;
+        }
+
+        .velora-editorial-button {
+            display: inline-block;
+            padding: 14px 27px;
+            background: #111;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: .3s;
+        }
+
+        .velora-editorial-button:hover {
+            background: #c9a27e;
+            box-shadow: 0 10px 25px rgba(201,162,126,.3);
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        .velora-collection-footer {
+            background: #111;
+            color: #fff;
+            padding: 70px 25px 25px;
+        }
+
+        .velora-collection-footer-inner {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 45px;
+        }
+
+        .velora-collection-footer h2 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 4px;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .velora-collection-footer h3 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .velora-collection-footer p,
+        .velora-collection-footer a {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .velora-collection-footer ul {
+            list-style: none;
+        }
+
+        .velora-collection-footer li {
+            margin-bottom: 9px;
+        }
+
+        .velora-collection-footer a:hover {
+            color: #c9a27e;
+        }
+
+        .velora-collection-copy {
+            border-top: 1px solid #333;
+            margin-top: 55px;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .velora-collection-menu {
+                gap: 14px;
+            }
+
+            .velora-editorial-block,
+            .velora-editorial-block.velora-editorial-reverse {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .velora-editorial-image img {
+                height: 550px;
+            }
+
+            .velora-collection-footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .velora-collection-menu {
+                display: none;
+            }
+
+            .velora-collection-hero {
+                min-height: 70vh;
+                padding: 50px 25px;
+            }
+
+            .velora-collection-intro h2 {
+                font-size: 38px;
+            }
+
+            .velora-editorial-content {
+                padding: 5px;
+            }
+
+            .velora-collection-footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="velora-collection-header">
+    <nav class="velora-collection-nav" aria-label="Main navigation">
+        <a href="./index.html.html" class="velora-collection-logo">VÉLORA</a>
+
+        <ul class="velora-collection-menu">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./shop.html">SHOP</a></li>
+            <li><a href="./collections.html" class="velora-collection-current">COLLECTIONS</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="velora-collection-hero">
+        <div class="velora-collection-hero-content">
+            <p class="velora-collection-label">VÉLORA / 2026 EDIT</p>
+            <h1 class="velora-collection-title">THE<br>AUTUMN<br>EDIT</h1>
+            <p class="velora-collection-description">
+                A study in texture, movement and modern silhouettes.
+                Designed for the changing season.
+            </p>
+        </div>
+    </section>
+
+    <section class="velora-collection-intro">
+        <h2>Designed for the season.</h2>
+        <p>
+            The Autumn Edit brings together understated luxury, modern
+            tailoring and effortless layers in a refined seasonal wardrobe.
+        </p>
+    </section>
+
+    <section class="velora-editorial-block">
+
+        <div class="velora-editorial-image">
+            <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
+                 alt="Woman wearing an elegant autumn fashion outfit"
+                 loading="lazy">
+        </div>
+
+        <div class="velora-editorial-content">
+            <p class="velora-editorial-number">01 / LAYERS</p>
+            <h2>Effortless Layers</h2>
+            <p>
+                Soft textures, fluid silhouettes and considered proportions
+                create a wardrobe designed to move effortlessly through the season.
+            </p>
+            <a href="shop.html" class="velora-editorial-button">SHOP THIS EDIT →</a>
+        </div>
+
+    </section>
+
+    <section class="velora-editorial-block velora-editorial-reverse">
+
+        <div class="velora-editorial-content">
+            <p class="velora-editorial-number">02 / TAILORING</p>
+            <h2>Modern Tailoring</h2>
+            <p>
+                Structured pieces meet relaxed proportions for a modern
+                interpretation of timeless tailoring.
+            </p>
+            <a href="shop.html" class="velora-editorial-button">SHOP THIS EDIT →</a>
+        </div>
+
+        <div class="velora-editorial-image">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85"
+                 alt="Modern tailored fashion collection"
+                 loading="lazy">
+        </div>
+
+    </section>
+
+    <section class="velora-editorial-block">
+
+        <div class="velora-editorial-image">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=85"
+                 alt="Elegant evening fashion outfit"
+                 loading="lazy">
+        </div>
+
+        <div class="velora-editorial-content">
+            <p class="velora-editorial-number">03 / EVENING</p>
+            <h2>Evening Essentials</h2>
+            <p>
+                Sophisticated silhouettes created for evenings that deserve
+                something unforgettable.
+            </p>
+            <a href="shop.html" class="velora-editorial-button">SHOP THIS EDIT →</a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="velora-collection-footer">
+
+    <div class="velora-collection-footer-inner">
+
+        <div>
+            <h2>VÉLORA</h2>
+            <p>Modern fashion. Timeless expression.</p>
+        </div>
+
+        <div>
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collection.html">Collections</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>CUSTOMER CARE</h3>
+            <ul>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Size Guide</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>FOLLOW US</h3>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="velora-collection-copy">
+        © 2026 VÉLORA. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
