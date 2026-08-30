@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact VÉLORA | Let's Talk Style</title>
+    <meta name="description" content="Contact VÉLORA for fashion enquiries, customer care and brand information.">
+    <meta name="keywords" content="contact VÉLORA, fashion customer care, VÉLORA contact">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #222;
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        .velora-contact-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: rgba(255,255,255,.97);
+            border-bottom: 1px solid #eee;
+        }
+
+        .velora-contact-navigation {
+            max-width: 1300px;
+            min-height: 82px;
+            margin: auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .velora-contact-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 5px;
+        }
+
+        .velora-contact-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .velora-contact-links a {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: .3s;
+        }
+
+        .velora-contact-links a:hover,
+        .velora-contact-active {
+            color: #c9a27e;
+        }
+
+        /* HERO */
+        .velora-contact-hero {
+            background: #f5f1ec;
+            padding: 100px 25px;
+            text-align: center;
+        }
+
+        .velora-contact-label {
+            color: #c9a27e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .velora-contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(50px, 8vw, 90px);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .velora-contact-description {
+            max-width: 600px;
+            margin: 25px auto 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* CONTACT AREA */
+        .velora-contact-main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 80px;
+        }
+
+        .velora-contact-information h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .velora-contact-item {
+            margin-bottom: 25px;
+        }
+
+        .velora-contact-item strong {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .velora-contact-item p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* FORM */
+        .velora-contact-form-box {
+            background: #f5f1ec;
+            padding: 45px;
+        }
+
+        .velora-contact-form-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .velora-contact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .velora-contact-field {
+            margin-bottom: 18px;
+        }
+
+        .velora-contact-field label {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .velora-contact-field input,
+        .velora-contact-field select,
+        .velora-contact-field textarea {
+            width: 100%;
+            padding: 14px;
+            background: #fff;
+            border: 1px solid #ddd;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        .velora-contact-field textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .velora-contact-field input:focus,
+        .velora-contact-field select:focus,
+        .velora-contact-field textarea:focus {
+            border-color: #c9a27e;
+            box-shadow: 0 0 0 3px rgba(201,162,126,.12);
+        }
+
+        .velora-contact-submit {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: #111;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .velora-contact-submit:hover {
+            background: #c9a27e;
+            box-shadow: 0 12px 25px rgba(201,162,126,.3);
+            transform: translateY(-2px);
+        }
+
+        .velora-contact-success {
+            display: none;
+            margin-top: 18px;
+            padding: 13px;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* MAP */
+        .velora-contact-map {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            height: 330px;
+            background:
+                linear-gradient(rgba(17,17,17,.35), rgba(17,17,17,.35)),
+                url("https://images.unsplash.com/photo-1524666041070-9a876749a8e1?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .velora-contact-map-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .velora-contact-map-content p {
+            font-size: 12px;
+        }
+
+        /* FOOTER */
+        .velora-contact-footer {
+            background: #111;
+            color: #fff;
+            padding: 65px 25px 25px;
+        }
+
+        .velora-contact-footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 45px;
+        }
+
+        .velora-contact-footer h2 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 4px;
+        }
+
+        .velora-contact-footer h3 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .velora-contact-footer p,
+        .velora-contact-footer a {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .velora-contact-footer ul {
+            list-style: none;
+        }
+
+        .velora-contact-footer li {
+            margin-bottom: 8px;
+        }
+
+        .velora-contact-footer a:hover {
+            color: #c9a27e;
+        }
+
+        .velora-contact-bottom {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 10px;
+        }
+
+        @media (max-width: 850px) {
+            .velora-contact-links {
+                gap: 15px;
+            }
+
+            .velora-contact-main {
+                grid-template-columns: 1fr;
+            }
+
+            .velora-contact-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .velora-contact-links {
+                display: none;
+            }
+
+            .velora-contact-row {
+                grid-template-columns: 1fr;
+            }
+
+            .velora-contact-form-box {
+                padding: 25px;
+            }
+
+            .velora-contact-information h2 {
+                font-size: 42px;
+            }
+
+            .velora-contact-footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="velora-contact-header">
+
+    <nav class="velora-contact-navigation" aria-label="Main navigation">
+
+        <a href="./index.html.html" class="velora-contact-logo">VÉLORA</a>
+
+        <ul class="velora-contact-links">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./shop.html">SHOP</a></li>
+            <li><a href="./collections.html">COLLECTIONS</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./contact.html" class="velora-contact-active">CONTACT</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="velora-contact-hero">
+        <p class="velora-contact-label">VÉLORA CUSTOMER CARE</p>
+        <h1 class="velora-contact-title">LET'S TALK STYLE</h1>
+        <p class="velora-contact-description">
+            Have a question about VÉLORA? Our team would love to hear from you.
+        </p>
+    </section>
+
+    <section class="velora-contact-main">
+
+        <div class="velora-contact-information">
+
+            <h2>We'd love to hear from you.</h2>
+
+            <div class="velora-contact-item">
+                <strong>EMAIL</strong>
+                <p>hello@velora-fashion.com</p>
+            </div>
+
+            <div class="velora-contact-item">
+                <strong>PHONE</strong>
+                <p>+1 (555) 123-4567</p>
+            </div>
+
+            <div class="velora-contact-item">
+                <strong>ADDRESS</strong>
+                <p>45 Madison Avenue<br>New York, NY</p>
+            </div>
+
+            <div class="velora-contact-item">
+                <strong>BUSINESS HOURS</strong>
+                <p>Monday – Saturday<br>10:00 AM – 7:00 PM</p>
+            </div>
+
+        </div>
+
+        <div class="velora-contact-form-box">
+
+            <h2>Send a Message</h2>
+
+            <form id="veloraContactForm">
+
+                <div class="velora-contact-row">
+
+                    <div class="velora-contact-field">
+                        <label for="veloraFirstName">FIRST NAME</label>
+                        <input id="veloraFirstName" type="text" required>
+                    </div>
+
+                    <div class="velora-contact-field">
+                        <label for="veloraLastName">LAST NAME</label>
+                        <input id="veloraLastName" type="text" required>
+                    </div>
+
+                </div>
+
+                <div class="velora-contact-row">
+
+                    <div class="velora-contact-field">
+                        <label for="veloraEmail">EMAIL</label>
+                        <input id="veloraEmail" type="email" required>
+                    </div>
+
+                    <div class="velora-contact-field">
+                        <label for="veloraPhone">PHONE</label>
+                        <input id="veloraPhone" type="tel">
+                    </div>
+
+                </div>
+
+                <div class="velora-contact-field">
+                    <label for="veloraSubject">SUBJECT</label>
+
+                    <select id="veloraSubject" required>
+                        <option value="">Select a subject</option>
+                        <option>Order Enquiry</option>
+                        <option>Product Information</option>
+                        <option>Returns</option>
+                        <option>General Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="velora-contact-field">
+                    <label for="veloraMessage">MESSAGE</label>
+                    <textarea id="veloraMessage" required></textarea>
+                </div>
+
+                <button type="submit" class="velora-contact-submit">
+                    SEND MESSAGE
+                </button>
+
+                <div class="velora-contact-success" id="veloraContactSuccess">
+                    Thank you! Your message has been received.
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="velora-contact-map" aria-label="VÉLORA location">
+
+        <div class="velora-contact-map-content">
+            <h2>Visit VÉLORA</h2>
+            <p>45 Madison Avenue, New York, NY</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="velora-contact-footer">
+
+    <div class="velora-contact-footer-grid">
+
+        <div>
+            <h2>VÉLORA</h2>
+            <p>Modern fashion. Timeless expression.</p>
+        </div>
+
+        <div>
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collection.html">Collections</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>CUSTOMER CARE</h3>
+            <ul>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Size Guide</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>FOLLOW US</h3>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="velora-contact-bottom">
+        © 2026 VÉLORA. All Rights Reserved.
+    </div>
+
+</footer>
+
+<script>
+    const veloraContactForm = document.getElementById("veloraContactForm");
+    const veloraContactSuccess = document.getElementById("veloraContactSuccess");
+
+    veloraContactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        if (veloraContactForm.checkValidity()) {
+
+            veloraContactSuccess.style.display = "block";
+
+            veloraContactForm.reset();
+
+            setTimeout(function() {
+                veloraContactSuccess.style.display = "none";
+            }, 5000);
+        }
+    });
+</script>
+
+</body>
+</html>
