@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore the VÉLORA Autumn Edit featuring modern tailoring, effortless layers and elegant evening essentials.">
+
+    <meta name="keywords"
+        content="VÉLORA fashion, autumn collection, women's fashion, men's fashion, premium clothing, fashion collection">
+
+    <meta name="author" content="VÉLORA">
+
+    <title>Collections | VÉLORA Premium Fashion</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           COLLECTION PAGE RESET
+        ===================================================== */
+
+        .velora-collection-page *,
+        .velora-collection-page *::before,
+        .velora-collection-page *::after {
+            box-sizing: border-box;
+        }
+
+        .velora-collection-page {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #222222;
+            font-family: "Montserrat", sans-serif;
+            overflow-x: hidden;
+        }
+
+        .velora-collection-page img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .velora-collection-page a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .velora-collection-header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+        }
+
+        .velora-collection-nav {
+            width: 92%;
+            max-width: 1400px;
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .velora-collection-logo {
+            color: #111111;
+            font-family: "Playfair Display", serif;
+            font-size: 29px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            white-space: nowrap;
+        }
+
+        .velora-collection-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 34px;
+        }
+
+        .velora-collection-menu a {
+            color: #222222;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .velora-collection-menu a::after {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: #c9a27e;
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            transition: width 0.3s ease;
+        }
+
+        .velora-collection-menu a:hover {
+            color: #c9a27e;
+        }
+
+        .velora-collection-menu a:hover::after {
+            width: 100%;
+        }
+
+        .velora-collection-tools {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .velora-collection-tool {
+            border: 0;
+            background: transparent;
+            color: #222222;
+            font-size: 19px;
+            cursor: pointer;
+            padding: 7px;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .velora-collection-tool:hover {
+            color: #c9a27e;
+            transform: translateY(-2px);
+        }
+
+        .velora-collection-mobile {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .velora-autumn-hero {
+            min-height: 680px;
+            position: relative;
+
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(17, 17, 17, 0.70),
+                    rgba(17, 17, 17, 0.15)
+                ),
+                url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .velora-autumn-content {
+            width: 90%;
+            max-width: 1400px;
+            margin: auto;
+            color: #ffffff;
+        }
+
+        .velora-autumn-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .velora-autumn-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(55px, 8vw, 105px);
+            font-weight: 500;
+            line-height: 0.95;
+            margin: 0 0 28px;
+            letter-spacing: -2px;
+        }
+
+        .velora-autumn-description {
+            max-width: 520px;
+            font-size: 15px;
+            line-height: 1.9;
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+
+        .velora-autumn-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            background: #ffffff;
+            color: #111111;
+
+            padding: 15px 29px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .velora-autumn-button:hover {
+            background: #c9a27e;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(201, 162, 126, 0.35);
+        }
+
+
+        /* =====================================================
+           INTRODUCTION
+        ===================================================== */
+
+        .velora-edit-intro {
+            padding: 105px 7% 85px;
+            text-align: center;
+            background: #f5f1ec;
+        }
+
+        .velora-edit-small {
+            color: #c9a27e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .velora-edit-heading {
+            color: #111111;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 62px);
+            font-weight: 500;
+            margin: 0 0 25px;
+        }
+
+        .velora-edit-text {
+            max-width: 690px;
+            margin: auto;
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.9;
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           EDITORIAL SECTION
+        ===================================================== */
+
+        .velora-editorial-block {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 650px;
+        }
+
+        .velora-editorial-photo {
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .velora-editorial-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform 0.8s ease;
+        }
+
+        .velora-editorial-block:hover .velora-editorial-photo img {
+            transform: scale(1.04);
+        }
+
+        .velora-editorial-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 70px;
+            background: #ffffff;
+        }
+
+        .velora-editorial-inner {
+            max-width: 470px;
+        }
+
+        .velora-editorial-number {
+            display: block;
+            color: #c9a27e;
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .velora-editorial-title {
+            color: #111111;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 67px);
+            font-weight: 500;
+            line-height: 1.05;
+            margin: 0 0 25px;
+        }
+
+        .velora-editorial-copy {
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 32px;
+        }
+
+        .velora-editorial-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+
+            color: #111111;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid #111111;
+            padding-bottom: 8px;
+
+            transition:
+                color 0.3s ease,
+                border-color 0.3s ease,
+                gap 0.3s ease;
+        }
+
+        .velora-editorial-link:hover {
+            color: #c9a27e;
+            border-color: #c9a27e;
+            gap: 20px;
+        }
+
+
+        /* =====================================================
+           REVERSE EDITORIAL
+        ===================================================== */
+
+        .velora-editorial-reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .velora-editorial-reverse .velora-editorial-photo {
+            order: 2;
+        }
+
+        .velora-editorial-reverse .velora-editorial-info {
+            order: 1;
+            background: #f5f1ec;
+        }
+
+
+        /* =====================================================
+           THIRD EDIT
+        ===================================================== */
+
+        .velora-evening-area {
+            background: #111111;
+            color: #ffffff;
+            padding: 110px 6%;
+        }
+
+        .velora-evening-heading {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .velora-evening-heading span {
+            color: #c9a27e;
+            display: block;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 17px;
+        }
+
+        .velora-evening-heading h2 {
+            color: #ffffff;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 65px);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .velora-evening-grid {
+            max-width: 1350px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 25px;
+        }
+
+        .velora-evening-large,
+        .velora-evening-small {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .velora-evening-large {
+            min-height: 650px;
+        }
+
+        .velora-evening-small {
+            min-height: 650px;
+        }
+
+        .velora-evening-large img,
+        .velora-evening-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform 0.8s ease;
+        }
+
+        .velora-evening-large:hover img,
+        .velora-evening-small:hover img {
+            transform: scale(1.05);
+        }
+
+        .velora-evening-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 38px;
+
+            background:
+                linear-gradient(
+                    transparent 40%,
+                    rgba(0, 0, 0, 0.75)
+                );
+        }
+
+        .velora-evening-overlay h3 {
+            color: #ffffff;
+            font-family: "Playfair Display", serif;
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0 0 15px;
+        }
+
+        .velora-evening-overlay p {
+            color: #eeeeee;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0 0 22px;
+            max-width: 470px;
+        }
+
+        .velora-evening-overlay a {
+            display: inline-block;
+            color: #ffffff;
+
+            border: 1px solid #ffffff;
+            padding: 12px 21px;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .velora-evening-overlay a:hover {
+            background: #c9a27e;
+            border-color: #c9a27e;
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           COLLECTION CTA
+        ===================================================== */
+
+        .velora-collection-cta {
+            padding: 115px 7%;
+            text-align: center;
+            background: #f5f1ec;
+        }
+
+        .velora-collection-cta h2 {
+            color: #111111;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 65px);
+            font-weight: 500;
+            margin: 0 0 20px;
+        }
+
+        .velora-collection-cta p {
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .velora-collection-shop {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #111111;
+            color: #ffffff;
+
+            padding: 16px 31px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .velora-collection-shop:hover {
+            background: #c9a27e;
+            color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(201, 162, 126, 0.35);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .velora-collection-footer {
+            background: #111111;
+            color: #ffffff;
+            padding: 75px 6% 25px;
+        }
+
+        .velora-footer-grid {
+            max-width: 1400px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            gap: 55px;
+
+            padding-bottom: 55px;
+        }
+
+        .velora-footer-brand h2 {
+            color: #ffffff;
+            font-family: "Playfair Display", serif;
+            font-size: 31px;
+            letter-spacing: 5px;
+            font-weight: 500;
+            margin: 0 0 18px;
+        }
+
+        .velora-footer-brand p {
+            color: #aaaaaa;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 280px;
+        }
+
+        .velora-footer-column h3 {
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 22px;
+        }
+
+        .velora-footer-column a {
+            display: block;
+            color: #aaaaaa;
+            font-size: 12px;
+            margin-bottom: 13px;
+
+            transition:
+                color 0.3s ease,
+                padding-left 0.3s ease;
+        }
+
+        .velora-footer-column a:hover {
+            color: #c9a27e;
+            padding-left: 5px;
+        }
+
+        .velora-footer-newsletter p {
+            color: #aaaaaa;
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .velora-footer-form {
+            display: flex;
+            border-bottom: 1px solid #555555;
+        }
+
+        .velora-footer-form input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+
+            background: transparent;
+            color: #ffffff;
+
+            padding: 13px 0;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+        }
+
+        .velora-footer-form input::placeholder {
+            color: #777777;
+        }
+
+        .velora-footer-form button {
+            border: 0;
+            background: transparent;
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            transition: color 0.3s ease;
+        }
+
+        .velora-footer-form button:hover {
+            color: #c9a27e;
+        }
+
+        .velora-footer-bottom {
+            max-width: 1400px;
+            margin: auto;
+
+            border-top: 1px solid #292929;
+
+            padding-top: 23px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .velora-footer-bottom p {
+            color: #666666;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           SCROLL ANIMATION
+        ===================================================== */
+
+        .velora-reveal-item {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .velora-reveal-item.velora-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .velora-collection-menu {
+                gap: 18px;
+            }
+
+            .velora-collection-menu a {
+                font-size: 10px;
+            }
+
+            .velora-editorial-block {
+                grid-template-columns: 1fr;
+            }
+
+            .velora-editorial-photo {
+                min-height: 550px;
+            }
+
+            .velora-editorial-info {
+                min-height: 500px;
+            }
+
+            .velora-editorial-reverse .velora-editorial-photo {
+                order: 1;
+            }
+
+            .velora-editorial-reverse .velora-editorial-info {
+                order: 2;
+            }
+
+            .velora-evening-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .velora-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            .velora-collection-nav {
+                min-height: 70px;
+                width: 88%;
+            }
+
+            .velora-collection-logo {
+                font-size: 23px;
+                letter-spacing: 3px;
+            }
+
+            .velora-collection-menu {
+                display: none;
+
+                position: absolute;
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px 8%;
+
+                background: #ffffff;
+                border-bottom: 1px solid #eeeeee;
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 22px;
+            }
+
+            .velora-collection-menu.velora-menu-open {
+                display: flex;
+            }
+
+            .velora-collection-mobile {
+                display: block;
+            }
+
+            .velora-collection-tools {
+                display: none;
+            }
+
+            .velora-autumn-hero {
+                min-height: 650px;
+                background-position: 62% center;
+            }
+
+            .velora-autumn-content {
+                width: 88%;
+            }
+
+            .velora-autumn-title {
+                font-size: 56px;
+            }
+
+            .velora-autumn-description {
+                font-size: 13px;
+            }
+
+            .velora-edit-intro {
+                padding: 75px 8%;
+            }
+
+            .velora-editorial-photo {
+                min-height: 430px;
+            }
+
+            .velora-editorial-info {
+                padding: 65px 8%;
+                min-height: 480px;
+            }
+
+            .velora-editorial-title {
+                font-size: 43px;
+            }
+
+            .velora-evening-area {
+                padding: 75px 6%;
+            }
+
+            .velora-evening-large,
+            .velora-evening-small {
+                min-height: 500px;
+            }
+
+            .velora-evening-overlay {
+                padding: 25px;
+            }
+
+            .velora-evening-overlay h3 {
+                font-size: 29px;
+            }
+
+            .velora-collection-cta {
+                padding: 80px 8%;
+            }
+
+            .velora-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .velora-footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 400px) {
+
+            .velora-autumn-title {
+                font-size: 47px;
+            }
+
+            .velora-edit-heading {
+                font-size: 38px;
+            }
+
+            .velora-editorial-title {
+                font-size: 38px;
+            }
+
+            .velora-evening-heading h2 {
+                font-size: 40px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body class="velora-collection-page">
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="velora-collection-header">
+
+        <nav class="velora-collection-nav" aria-label="Main navigation">
+
+            <a href="./index.html.html" class="velora-collection-logo">
+                VÉLORA
+            </a>
+
+            <div class="velora-collection-menu" id="veloraMainMenu">
+
+                <a href="./index.html">Home</a>
+
+                <a href="./shop.html">Shop</a>
+
+                <a href="./collections.html" aria-current="page">
+                    Collections
+                </a>
+
+                <a href="./about.html">About</a>
+
+                <a href="./contact.html">Contact</a>
+
+            </div>
+
+            <div class="velora-collection-tools">
+
+                <button
+                    class="velora-collection-tool"
+                    type="button"
+                    aria-label="Search">
+                    ⌕
+                </button>
+
+                <button
+                    class="velora-collection-tool"
+                    type="button"
+                    aria-label="Wishlist">
+                    ♡
+                </button>
+
+                <a
+                    href="shop.html"
+                    class="velora-collection-tool"
+                    aria-label="Shopping bag">
+                    ♧
+                </a>
+
+            </div>
+
+            <button
+                class="velora-collection-mobile"
+                id="veloraMenuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ===================================================== -->
+
+        <section class="velora-autumn-hero">
+
+            <div class="velora-autumn-content velora-reveal-item">
+
+                <div class="velora-autumn-label">
+                    VÉLORA / 2026 EDIT
+                </div>
+
+                <h1 class="velora-autumn-title">
+                    THE<br>
+                    AUTUMN<br>
+                    EDIT
+                </h1>
+
+                <p class="velora-autumn-description">
+                    A considered collection of refined silhouettes,
+                    rich textures and timeless pieces designed for
+                    the changing season.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="velora-autumn-button">
+                    SHOP THE EDIT
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO
+        ===================================================== -->
+
+        <section class="velora-edit-intro velora-reveal-item">
+
+            <div class="velora-edit-small">
+                The New Season
+            </div>
+
+            <h2 class="velora-edit-heading">
+                Designed for the moment.
+            </h2>
+
+            <p class="velora-edit-text">
+                Discover a sophisticated expression of contemporary
+                fashion. The Autumn Edit brings together effortless
+                layers, modern tailoring and elegant evening pieces
+                created to move seamlessly through the season.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             EFFORTLESS LAYERS
+        ===================================================== -->
+
+        <section
+            class="velora-editorial-block velora-reveal-item"
+            aria-labelledby="layers-heading">
+
+            <div class="velora-editorial-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1400&q=85"
+                    alt="Elegant autumn fashion layers"
+                    loading="lazy">
+
+            </div>
+
+            <div class="velora-editorial-info">
+
+                <div class="velora-editorial-inner">
+
+                    <span class="velora-editorial-number">
+                        01
+                    </span>
+
+                    <h2
+                        id="layers-heading"
+                        class="velora-editorial-title">
+                        Effortless<br>
+                        Layers
+                    </h2>
+
+                    <p class="velora-editorial-copy">
+                        Soft knits, structured coats and understated
+                        textures create versatile layers for cooler
+                        days. Each piece is designed to work effortlessly
+                        with the rest of your wardrobe.
+                    </p>
+
+                    <a
+                        href="shop.html"
+                        class="velora-editorial-link">
+                        SHOP THIS EDIT
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MODERN TAILORING
+        ===================================================== -->
+
+        <section
+            class="velora-editorial-block velora-editorial-reverse velora-reveal-item"
+            aria-labelledby="tailoring-heading">
+
+            <div class="velora-editorial-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=85"
+                    alt="Modern tailored fashion outfit"
+                    loading="lazy">
+
+            </div>
+
+            <div class="velora-editorial-info">
+
+                <div class="velora-editorial-inner">
+
+                    <span class="velora-editorial-number">
+                        02
+                    </span>
+
+                    <h2
+                        id="tailoring-heading"
+                        class="velora-editorial-title">
+                        Modern<br>
+                        Tailoring
+                    </h2>
+
+                    <p class="velora-editorial-copy">
+                        Sharp proportions meet relaxed elegance.
+                        Discover refined blazers, sophisticated
+                        trousers and contemporary silhouettes designed
+                        for a confident everyday wardrobe.
+                    </p>
+
+                    <a
+                        href="shop.html"
+                        class="velora-editorial-link">
+                        SHOP THIS EDIT
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EVENING ESSENTIALS
+        ===================================================== -->
+
+        <section class="velora-evening-area">
+
+            <div class="velora-evening-heading velora-reveal-item">
+
+                <span>
+                    03 / After Dark
+                </span>
+
+                <h2>
+                    Evening Essentials
+                </h2>
+
+            </div>
+
+            <div class="velora-evening-grid">
+
+                <article
+                    class="velora-evening-large velora-reveal-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=85"
+                        alt="Elegant evening fashion collection"
+                        loading="lazy">
+
+                    <div class="velora-evening-overlay">
+
+                        <div>
+
+                            <h3>
+                                Made for<br>
+                                the evening.
+                            </h3>
+
+                            <p>
+                                Elegant silhouettes and refined details
+                                designed for nights that deserve something
+                                unforgettable.
+                            </p>
+
+                            <a href="shop.html">
+                                Discover the edit
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="velora-evening-small velora-reveal-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85"
+                        alt="Premium evening fashion styling"
+                        loading="lazy">
+
+                    <div class="velora-evening-overlay">
+
+                        <div>
+
+                            <h3>
+                                Signature<br>
+                                pieces.
+                            </h3>
+
+                            <p>
+                                Discover statement pieces made to define
+                                your personal style.
+                            </p>
+
+                            <a href="shop.html">
+                                Shop now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ===================================================== -->
+
+        <section class="velora-collection-cta velora-reveal-item">
+
+            <h2>
+                Find your signature.
+            </h2>
+
+            <p>
+                Explore the complete VÉLORA collection and discover
+                pieces designed to become part of your personal style.
+            </p>
+
+            <a
+                href="shop.html"
+                class="velora-collection-shop">
+                Explore Shop
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="velora-collection-footer">
+
+        <div class="velora-footer-grid">
+
+            <div class="velora-footer-brand">
+
+                <h2>VÉLORA</h2>
+
+                <p>
+                    Modern fashion. Timeless expression.
+                    Designed for those who define their own style.
+                </p>
+
+            </div>
+
+
+            <div class="velora-footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collection.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="velora-footer-column">
+
+                <h3>Customer Care</h3>
+
+                <a href="contact.html">Shipping</a>
+                <a href="contact.html">Returns</a>
+                <a href="contact.html">Size Guide</a>
+                <a href="contact.html">FAQ</a>
+
+            </div>
+
+
+            <div class="velora-footer-newsletter">
+
+                <div class="velora-footer-column">
+
+                    <h3>Stay Connected</h3>
+
+                </div>
+
+                <p>
+                    Sign up for new collection announcements,
+                    exclusive offers and fashion inspiration.
+                </p>
+
+                <form
+                    class="velora-footer-form"
+                    id="veloraNewsletterForm">
+
+                    <label
+                        for="veloraNewsletterEmail"
+                        style="display:none;">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="veloraNewsletterEmail"
+                        placeholder="Your email address"
+                        required>
+
+                    <button type="submit">
+                        JOIN
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="velora-footer-bottom">
+
+            <p>
+                © 2026 VÉLORA. ALL RIGHTS RESERVED.
+            </p>
+
+            <p>
+                MODERN FASHION / TIMELESS EXPRESSION
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        const veloraMenuButton =
+            document.getElementById("veloraMenuButton");
+
+        const veloraMainMenu =
+            document.getElementById("veloraMainMenu");
+
+        veloraMenuButton.addEventListener("click", function () {
+
+            const menuIsOpen =
+                veloraMainMenu.classList.toggle("velora-menu-open");
+
+            veloraMenuButton.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+
+            veloraMenuButton.innerHTML =
+                menuIsOpen ? "✕" : "☰";
+
+        });
+
+
+        /* =====================================================
+           CLOSE MOBILE MENU AFTER LINK CLICK
+        ===================================================== */
+
+        const veloraMenuLinks =
+            veloraMainMenu.querySelectorAll("a");
+
+        veloraMenuLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                veloraMainMenu.classList.remove(
+                    "velora-menu-open"
+                );
+
+                veloraMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                veloraMenuButton.innerHTML = "☰";
+
+            });
+
+        });
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        const veloraRevealElements =
+            document.querySelectorAll(".velora-reveal-item");
+
+        const veloraRevealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "velora-visible"
+                            );
+
+                            veloraRevealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        veloraRevealElements.forEach(function (element) {
+
+            veloraRevealObserver.observe(element);
+
+        });
+
+
+        /* =====================================================
+           NEWSLETTER
+        ===================================================== */
+
+        const veloraNewsletterForm =
+            document.getElementById(
+                "veloraNewsletterForm"
+            );
+
+        veloraNewsletterForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const emailInput =
+                    document.getElementById(
+                        "veloraNewsletterEmail"
+                    );
+
+                if (!emailInput.checkValidity()) {
+
+                    emailInput.reportValidity();
+                    return;
+
+                }
+
+                alert(
+                    "Thank you for joining the VÉLORA newsletter."
+                );
+
+                emailInput.value = "";
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
